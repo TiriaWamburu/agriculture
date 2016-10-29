@@ -1,0 +1,124 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crop Success Analytics</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Crops Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling-->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smoth-scrolling-->
+</head>
+<body>
+	<!--header-->
+	<div class="logo">
+		<div class="container">
+			<div class="logo-info">
+				<a href="">
+					<h1>Crop Success Analytics</h1>
+					<span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--//header-->
+	<!--navigation-->
+	<div class="top-nav">
+		{% include 'navigation.html' %}
+	</div>
+	<!--//navigation-->
+
+	<!--crops-->
+	<div class="about-team">
+		<div class="container">
+			<h3 class="title">Crops Being Analyzed</h3>
+			<div class="row team-row">
+				<div class="col-sm-6 col-md-3 team-grids">
+					<div class="thumbnail team-thmnl">
+						<img src="/static/images/img12.jpg" class="img-responsive zoom-img" alt="...">
+						<div class="caption">
+							<h4><a href="#">Maize</a></h4>
+							<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 team-grids">
+					<div class="thumbnail team-thmnl">
+						<img src="/static/images/img13.jpg" class="img-responsive zoom-img" alt="...">
+						<div class="caption">
+							<h4><a href="#">Beans</a></h4>
+							<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 team-grids">
+					<div class="thumbnail team-thmnl">
+						<img src="/static/images/img14.jpg" class="img-responsive zoom-img" alt="...">
+						<div class="caption">
+							<h4><a href="#">Tomatoes</a></h4>
+							<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 team-grids">
+					<div class="thumbnail team-thmnl">
+						<img src="/static/images/img15.jpg" class="img-responsive zoom-img" alt="...">
+						<div class="caption">
+							<h4><a href="#">Carrots</a></h4>
+							<p>Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/bootstrap.js"></script>
+</body>
+</html>

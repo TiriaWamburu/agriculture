@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
+    </button>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="hvr-bounce-to-bottom {% ifequal active_menu 'index' %} active {% endifequal %}"><a href="{% url 'index' %}">Home</a></li>
+      <li class="hvr-bounce-to-bottom {% ifequal active_menu 'crops' %} active {% endifequal %}"><a href="{% url 'crops-table' %}">Crops</a></li>
+      <li class="hvr-bounce-to-bottom {% ifequal active_menu 'regions' %} active {% endifequal %}"><a href="{% url 'regions' %}">Regions</a></li>
+      <li class="hvr-bounce-to-bottom {% ifequal active_menu 'minerals' %} active {% endifequal %}"><a href="{% url 'minerals' %}">Minerals</a></li>
+      <li class="hvr-bounce-to-bottom {% ifequal active_menu 'analysis' %} active {% endifequal %}"><a href="{% url 'crop-select' %}">Analysis</a></li>
+    </ul>
+    <div class="clearfix"> </div>
+  </div>
+</nav>

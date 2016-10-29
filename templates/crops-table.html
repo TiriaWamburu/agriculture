@@ -1,0 +1,157 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crop Success Analytics</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Crops Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling-->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smoth-scrolling-->
+</head>
+<body>
+	<!--header-->
+	<div class="logo">
+		<div class="container">
+			<div class="logo-info">
+				<a href="">
+					<h1>Crop Success Analytics</h1>
+					<span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--//header-->
+	<!--navigation-->
+	<div class="top-nav">
+		{% include 'navigation.html' %}
+	</div>
+	<!--//navigation-->
+
+	<!--typography-page -->
+	<div class="typo">
+		<div class="container">
+			{% for crop in crops %}
+			<!-- Setup Modals -->
+			<div id="{{crop.pk}}" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header modal-header-primary">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">{{crop.name|title}}</h4>
+						</div>
+						<div class="modal-body">
+							{% if crop.mineral_requirements.all %}
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Mineral Name</th>
+										<th>Symbol</th>
+										<th>Percentage Requirement</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for requirement in crop.mineral_requirements.all %}
+									<tr>
+										<td>{{requirement.mineral.name}}</td>
+										<td>{{requirement.mineral.symbol}}</td>
+										<td>{{requirement.percentage}}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+							{% else %}
+							<p>No mineral requirements to show.</p>
+							{% endif %}
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+			<h2 class="typoh2">Crops</h2>
+			<p>The table below shows the crops that were analyzed in this project.</p>
+			<hr class="bs-docs-separator">
+			<div class="bs-docs-example">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Crop Name</th>
+							<th>Annual Rainfall (ml)</th>
+							<th>Lower pH Bound</th>
+							<th>Upper pH Bound</th>
+							<th>Mineral Requirements</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for crop in crops %}
+						<tr>
+							<td>{{forloop.counter}}</td>
+							<td>{{crop.name}}</td>
+							<td>{{crop.rainfall}}</td>
+							<td>{{crop.ph_low}}</td>
+							<td>{{crop.ph_high}}</td>
+							<td><a href="#" data-toggle="modal" data-target="#{{crop.pk}}">View</a> | <a href="{% url 'add-crop-mineral' %}">New Requirement</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<a href="{% url 'add-crop' %}" class="pull-right">Add New Crop</a>
+			</div>
+		</div>
+	</div>
+	<!-- //typography-page -->
+
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/bootstrap.js"></script>
+</body>
+</html>
